@@ -252,13 +252,13 @@ def tickers_by_issuer(issuer:str) -> pd.DataFrame:
 
     '''
 
-qury = f"""
-SELECT DISTINCT
-EMISOR, TICKER, CATEGORIA
-FROM DM_INSTRUMENTOS
-WHERE EMISOR = '{issuer}'
-"""
-db = DB_Investments()
-df = db.excexute_query(query)
+    query = f"""
+    SELECT DISTINCT
+    EMISOR, TICKER, CATEGORIA
+    FROM DM_INSTRUMENTOS
+    WHERE EMISOR = '{issuer}'
+    """
+    db = DB_Investments()
+    df = db.execute_query(query)
 
-return df 
+    return df 
